@@ -3,7 +3,7 @@ FROM sapmachine:21-jdk-ubuntu-22.04
 ARG DD_GIT_REPOSITORY_URL
 ARG DD_GIT_COMMIT_SHA
 ENV DD_GIT_REPOSITORY_URL=https://github.com/IsaacDiaz09/dd-continuous-profiler-example
-ENV DD_GIT_COMMIT_SHA=d60d5cd1a919a91a3eb474065d66509606c4bcf5
+ENV DD_GIT_COMMIT_SHA=2353496335bd974a4be17bd04a6b6f664429c419
 
 COPY . /home
 WORKDIR /home/java
