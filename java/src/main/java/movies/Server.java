@@ -57,17 +57,7 @@ public class Server {
 	}
 
 	private static Stream<Movie> sortByDescReleaseDate(Stream<Movie> movies) {
-		return movies.sorted(Comparator.comparing((Movie m) -> {
-			// Problem: We are parsing a datetime for each item to be sorted.
-			// Example Solution:
-			//   Since date is in isoformat (yyyy-mm-dd) already, that one sorts nicely with normal string sorting
-			//   `return m.releaseDate`
-			try {
-				return LocalDate.parse(m.releaseDate);
-			} catch (Exception e) {
-				return LocalDate.MIN;
-			}
-		}).reversed());
+		return movies.sorted(Comparator.comparing((Movie m) -> m.releaseDate).reversed());
 	}
 
 	private static Object replyJSON(Response res, Stream<?> data) {
